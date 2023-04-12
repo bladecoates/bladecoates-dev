@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+import PostSummary from "../components/Cards/PostSummary.svelte";
+
+
+const posts = (await getCollection("blog", ({ data }) => {
+  return data.draft === false;
+})).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+const title = "Blog";
+---
+
+<MainLayout title={title}>
+  <div>
+    <div><h2>Latest Posts</h2></div>
+    <div>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <PostSummary
+                title={post.data.title}
+                slug={`/blog/${post.slug}/`}
+                date={post.data.pubDate}
+                summary={post.data.summary}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</MainLayout>

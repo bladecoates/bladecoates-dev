@@ -1,0 +1,25 @@
+---
+import PostContent from "../components/PageContent/PostContent.astro";
+import Infobox from "../components/Infobox/Infobox.svelte";
+import BaseLayout from "./BaseLayout.astro";
+
+const { content = {} } = Astro.props;
+// TODO: Remove use of `content.astro.headings`
+const headings = Astro.props.headings ?? content.astro?.headings;
+---
+
+<BaseLayout {...Astro.props}>
+  <PostContent {...{ content }}>
+    {
+      headings && (
+        <Fragment slot="before-article">
+          <nav>
+            <Infobox client:media="(max-width: 72em)" isMobile={true} />
+          </nav>
+        </Fragment>
+      )
+    }
+    <Fragment slot="after-title"><slot name="header" /></Fragment>
+    <slot />
+  </PostContent>
+</BaseLayout>
