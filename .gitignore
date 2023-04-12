@@ -1,3 +1,11 @@
+# Temporary Ignores
+Makefile
+logo/
+
+# IDE configuration
+.vscode/
+.idea/
+
 # build output
 dist/
 
