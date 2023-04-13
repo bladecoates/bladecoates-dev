@@ -6,7 +6,7 @@ export async function get(context) {
   return data.draft === false;
 });
   return rss({
-    title: 'BladeCoates.dev Blog',
+    title: 'Blade Coates Blog',
     description: 'Constantly evolving my problem-solving, development, and leadership skills.',
     site: context.site,
     items: blog.map((post) => ({
