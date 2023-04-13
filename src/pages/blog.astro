@@ -8,12 +8,12 @@ const posts = (
     return data.draft === false;
   })
 ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const title = "Blog";
+const title = "Latest Posts";
 ---
 
 <MainLayout title={title}>
   <div>
-    <div><h2>Latest Posts</h2></div>
+    <!--<div><h2>Latest Posts</h2></div>-->
     <div>
       <ul>
         {
