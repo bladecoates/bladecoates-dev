@@ -9,19 +9,6 @@ const headings = Astro.props.headings;
 
 <BaseLayout {...Astro.props}>
   <MainContent {...{ content, title }}>
-    {
-      headings && (
-        <Fragment slot="before-article">
-          //{' '}
-          <nav>
-            // <Infobox client:media="(max-width: 72em)" isMobile={true} />
-            //{' '}
-          </nav>
-        </Fragment>
-      )
-    }
-    <Fragment slot="after-title"><slot name="header" /></Fragment>
     <slot />
   </MainContent>
-
 </BaseLayout>
