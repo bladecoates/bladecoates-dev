@@ -7,7 +7,7 @@ import PostSummary from "../components/Cards/PostSummary.svelte";
 const posts = (await getCollection("blog", ({ data }) => {
   return data.draft === false;
 })).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const title = "Blog";
 ---
