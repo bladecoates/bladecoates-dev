@@ -25,7 +25,7 @@ const { title } = Astro.props;
     <section class="main-section">
       <header>
         <slot name="before-title" />
-        <h1 class="content-title" id="overview" set:html={title} />
+        <h1 class="font-black" id="overview" set:html={title} />
         <div class="metadata-desktop">
           <!-- <nav class="">
             <Infobox client:media="(min-width: 50em)" isMobile={false} />
