@@ -2,7 +2,7 @@
 title: "New Site, New Layout, New Framework"
 description: "A New Site, New Layout on a New framework learning Astro 2.0"
 slug: "new-site-new-layout-new-framework"
-pubDate: "Jul 08 2022"
+pubDate: "April 13 2023"
 heroImage: ""
 #dates:
 #  created: 2023-01-01T00:00:00-5:00
