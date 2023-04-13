@@ -3,12 +3,11 @@ import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import PostSummary from "../components/Cards/PostSummary.svelte";
 
-
-const posts = (await getCollection("blog", ({ data }) => {
-  return data.draft === false;
-})).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (
+  await getCollection("blog", ({ data }) => {
+    return data.draft === false;
+  })
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const title = "Blog";
 ---
 
@@ -24,7 +23,7 @@ const title = "Blog";
                 title={post.data.title}
                 slug={`/blog/${post.slug}/`}
                 date={post.data.pubDate}
-                summary={post.data.summary}
+                description={post.data.description}
               />
             </li>
           ))
