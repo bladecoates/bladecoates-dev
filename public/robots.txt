@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bladecoates.dev/sitemap-index.xml
