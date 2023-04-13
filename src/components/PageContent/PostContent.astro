@@ -10,6 +10,7 @@ export interface Props {
 const { content } = Astro.props;
 // We wrap `@astrojs/` in a span to style it separately on integration pages.
 const title = content.title;
+const post = Astro.props.post;
 ---
 
 <div dir="ltr" lang="en">
@@ -33,7 +34,7 @@ const title = content.title;
 				<h1 class="content-title" id="overview" set:html={title} />
 				<div class="metadata-desktop">
 					<nav class="">
-						<Infobox client:media="(min-width: 50em)" isMobile={false} />
+						<Infobox client:media="(min-width: 50em)" isMobile={false} date={post.data.pubDate} />
 					</nav>
 				</div>
 				<slot name="after-title" />

@@ -3,6 +3,7 @@
 	import { Card, Tag } from 'agnostic-svelte';
 
 	export let isMobile;
+	export let date;
 </script>
 
 {#if isMobile}
@@ -52,7 +53,13 @@
 					>
 						<div class="">Published</div>
 						<div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
-							2023-01-XX 00:00
+							<time class="" datetime={date.toISOString()}
+						>{date.toLocaleDateString('en-us', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}</time
+					>
 						</div>
 					</div>
 				</Card>
@@ -62,7 +69,13 @@
 					>
 						<div class="">Updated</div>
 						<div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
-							2023-01-XX 00:00
+							<time class="" datetime={date.toISOString()}
+						>{date.toLocaleDateString('en-us', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}</time
+					>
 						</div>
 					</div>
 				</Card>
@@ -97,7 +110,13 @@
 					</div>
 					<div class="">Published</div>
 					<div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
-						2023-01-XX 00:00
+						<time class="" datetime={date.toISOString()}
+						>{date.toLocaleDateString('en-us', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}</time
+					>
 					</div>
 				</div>
 			</Card>
@@ -105,7 +124,13 @@
 				<div class="grid w-full grid-cols-4 content-center items-stretch gap-2">
 					<div class="">Updated</div>
 					<div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
-						2023-01-XX 00:00
+						<time class="" datetime={date.toISOString()}
+						>{date.toLocaleDateString('en-us', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}</time
+					>
 					</div>
 					<div class="">Tags</div>
 					<div
