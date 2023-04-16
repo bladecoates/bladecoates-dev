@@ -4,57 +4,57 @@ import HeadCommon from "../components/HeadCommon.astro";
 import Header from "../components/Header/Header.astro";
 import { site } from "../config";
 
-const {title} = site;
+const { title } = site;
 const url = Astro.url;
 const currentPage = url.pathname;
 ---
 
 <html dir="ltr" lang="en" class="initial">
-	<head>
-		<title>{title}</title>
-		<HeadCommon />
-		<style>
-			#main-content {
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-				min-width: 0;
-			}
-		</style>
-		<script is:inline>
-			// This code was migrated/copied from ThemeToggleButton to make the
-			// dark mode toggle instant, vs. hidden a Preact useEffect() call.
-			const theme = (() => {
-				if (
-					typeof localStorage !== "undefined" &&
-					localStorage.getItem("theme")
-				) {
-					return localStorage.getItem("theme");
-				}
-				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-					return "dark";
-				}
-				return "light";
-			})();
-			if (theme === "light") {
-				document.documentElement.classList.remove("theme-dark");
-			} else {
-				document.documentElement.classList.add("theme-dark");
-			}
-		</script>
-	</head>
+  <head>
+    <title>{title}</title>
+    <HeadCommon />
+    <style>
+      #main-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-width: 0;
+      }
+    </style>
+    <script is:inline>
+      // This code was migrated/copied from ThemeToggleButton to make the
+      // dark mode toggle instant, vs. hidden a Preact useEffect() call.
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+      if (theme === "light") {
+        document.documentElement.classList.remove("theme-dark");
+      } else {
+        document.documentElement.classList.add("theme-dark");
+      }
+    </script>
+  </head>
 
-	<body>
-		<Header currentPage={currentPage} />
-		<main class="layout">
-			<div id="main-content" class="main-column">
-				<slot />
-			</div>
-		</main>
-		<div class="main-column">
-			<slot name="footer">
-				<Footer />
-			</slot>
-		</div>
-	</body>
+  <body>
+    <Header currentPage={currentPage} />
+    <main class="layout">
+      <div id="main-content" class="main-column">
+        <slot />
+      </div>
+    </main>
+    <div class="main-column">
+      <slot name="footer">
+        <Footer />
+      </slot>
+    </div>
+  </body>
 </html>

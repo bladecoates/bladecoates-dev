@@ -1,28 +1,28 @@
 ---
-import { SITE } from '../../config';
-import { giscus } from '../../config';
-import Infobox from '../Infobox/Infobox.svelte';
-import Giscus from '@giscus/svelte';
+import { SITE } from "../../config";
+import { giscus } from "../../config";
+import Infobox from "../Infobox/Infobox.svelte";
+import Giscus from "@giscus/svelte";
 
 export interface Props {
-	content: { title: string };
-	previous?: { text: string; link: string };
-	next?: { text: string; link: string };
+  content: { title: string };
+  previous?: { text: string; link: string };
+  next?: { text: string; link: string };
 }
 const {
-	repo,
-	repoId,
-	category,
-	categoryId,
-	mapping,
-	strict,
-	term,
-	reactionsEnabled,
-	emitMetadata,
-	inputPosition,
-	theme,
-	lang,
-	loading
+  repo,
+  repoId,
+  category,
+  categoryId,
+  mapping,
+  strict,
+  term,
+  reactionsEnabled,
+  emitMetadata,
+  inputPosition,
+  theme,
+  lang,
+  loading,
 } = giscus;
 
 // We wrap `@astrojs/` in a span to style it separately on integration pages.
@@ -30,119 +30,125 @@ const { title, content, post } = Astro.props.frontmatter || Astro.props;
 ---
 
 <div dir="ltr" lang="en">
-	{
-		Astro.slots.has('before-article') && (
-			<>
-				<div class="fixed-mobile-bar" dir="ltr">
-					<slot name="before-article" />
-				</div>
-				<div class="spacer" />
-			</>
-		)
-	}
-	<article id="article" class="content flex flex-column m-auto max-w-[85ch]">
-		<section class="main-section">
-			<header>
-				<slot name="before-title" />
-				<h1 class="font-black" id="overview" set:html={post.data.title} />
-				<div class="metadata-desktop">
-					<nav class="">
-						<Infobox client:media="(min-width: 50em)" isMobile={false} date={post.data.dates.published} tags={post.data.tags} />
-					</nav>
-				</div>
-				<slot name="after-title" />
-			</header>
-			<slot />
-		</section>
-	</article>
-	<div class="flex flex-column m-auto max-w-[85ch]">
-	<Giscus client:only="svelte"
-  id="comments"
-  repo={repo}
-  repoId={repoId}
-  category={category}
-  categoryId={categoryId}
-  mapping={mapping}
-  strict={strict}
-  term={term}
-  reactionsEnabled={reactionsEnabled}
-  emitMetadata={emitMetadata}
-  inputPosition={inputPosition}
-  theme={theme}
-  lang={lang}
-  loading={loading}
-/>
-		</div>
+  {
+    Astro.slots.has("before-article") && (
+      <>
+        <div class="fixed-mobile-bar" dir="ltr">
+          <slot name="before-article" />
+        </div>
+        <div class="spacer" />
+      </>
+    )
+  }
+  <article id="article" class="content flex-column m-auto flex max-w-[85ch]">
+    <section class="main-section">
+      <header>
+        <slot name="before-title" />
+        <h1 class="font-black" id="overview" set:html={post.data.title} />
+        <div class="metadata-desktop">
+          <nav class="">
+            <Infobox
+              client:media="(min-width: 50em)"
+              isMobile={false}
+              date={post.data.dates.published}
+              tags={post.data.tags}
+            />
+          </nav>
+        </div>
+        <slot name="after-title" />
+      </header>
+      <slot />
+    </section>
+  </article>
+  <div class="flex-column m-auto flex max-w-[85ch]">
+    <Giscus
+      client:only="svelte"
+      id="comments"
+      repo={repo}
+      repoId={repoId}
+      category={category}
+      categoryId={categoryId}
+      mapping={mapping}
+      strict={strict}
+      term={term}
+      reactionsEnabled={reactionsEnabled}
+      emitMetadata={emitMetadata}
+      inputPosition={inputPosition}
+      theme={theme}
+      lang={lang}
+      loading={loading}
+    />
+  </div>
 </div>
 
 <style>
-	.fixed-mobile-bar {
-		display: block;
-		position: fixed;
-		inset-inline: 0;
-		top: calc(var(--theme-navbar-height));
-		z-index: 2;
-	}
+  .fixed-mobile-bar {
+    display: block;
+    position: fixed;
+    inset-inline: 0;
+    top: calc(var(--theme-navbar-height));
+    z-index: 2;
+  }
 
-	.spacer {
-		height: var(--theme-mobile-infoxbox-height);
-	}
+  .spacer {
+    height: var(--theme-mobile-infoxbox-height);
+  }
 
-	.metadata-desktop {
-		display: none;
-		width: 100%;
-		font-size: var(--theme-text-xs);
-	}
+  .metadata-desktop {
+    display: none;
+    width: 100%;
+    font-size: var(--theme-text-xs);
+  }
 
-	@media (width >= 50em) {
-		.fixed-mobile-bar {
-			/* inset-inline-start: var(--theme-left-sidebar-width); */
-			margin-top: 0;
-		}
+  @media (width >= 50em) {
+    .fixed-mobile-bar {
+      /* inset-inline-start: var(--theme-left-sidebar-width); */
+      margin-top: 0;
+    }
 
-		.metadata-desktop {
-			display: block;
-		}
-	}
+    .metadata-desktop {
+      display: block;
+    }
+  }
 
-	@media (width >= 72em) {
-		.fixed-mobile-bar {
-			display: none;
-		}
+  @media (width >= 72em) {
+    .fixed-mobile-bar {
+      display: none;
+    }
 
-		.metadata-desktop {
-			display: block;
-		}
+    .metadata-desktop {
+      display: block;
+    }
 
-		.spacer {
-			height: 0;
-		}
-	}
+    .spacer {
+      height: 0;
+    }
+  }
 
-	.content-title :global(.scope) {
-		font-weight: 300;
-		color: var(--theme-text-lighter);
-	}
+  .content-title :global(.scope) {
+    font-weight: 300;
+    color: var(--theme-text-lighter);
+  }
 
-	.content {
-		padding-top: calc(var(--theme-navbar-height) + var(--doc-padding-block));
-		padding-bottom: var(--doc-padding-block);
-		padding-inline: var(--min-spacing-inline);
-		width: 100%;
-		height: 100%;
-		display: flex;
-		overflow-x: hidden;
-	}
+  .content {
+    padding-top: calc(var(--theme-navbar-height) + var(--doc-padding-block));
+    padding-bottom: var(--doc-padding-block);
+    padding-inline: var(--min-spacing-inline);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-x: hidden;
+  }
 
-	.content > section {
-		margin-bottom: 4rem;
-	}
+  .content > section {
+    margin-bottom: 4rem;
+  }
 
-	.next-previous-nav {
-		display: flex;
-		flex-wrap: wrap;
-		width: auto;
-		gap: 1rem;
-		margin-bottom: 1.5rem;
-	}
+  .next-previous-nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
 </style>

@@ -1,24 +1,31 @@
 ---
-import {getCollection} from "astro:content";
+import { getCollection } from "astro:content";
 import IndexLayout from "../layouts/IndexLayout.astro";
 import IndexSummary from "../components/Cards/IndexSummary.svelte";
 
-const title = 'Constantly evolving my problem-solving, development, and leadership skills.';
+const title =
+  "Constantly evolving my problem-solving, development, and leadership skills.";
 const post = (
   await getCollection("blog", ({ data }) => {
     return data.draft === false;
   })
-).sort((a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf());
+).sort(
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+);
 const link = (
   await getCollection("links", ({ data }) => {
     return data.draft === false;
   })
-).sort((a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf());
+).sort(
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+);
 const reading = (
   await getCollection("reading", ({ data }) => {
     return data.draft === false;
   })
-).sort((a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf());
+).sort(
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+);
 ---
 
 <IndexLayout>
@@ -26,15 +33,34 @@ const reading = (
     <div><h2>{title}</h2></div>
     <div>
       <div><h3>Latest Post</h3></div>
-      <IndexSummary header="Latest Post" type={post[0].data.type} title={post[0].data.title} description={post[0].data.description} link={post[0].slug}/>
+      <IndexSummary
+        header="Latest Post"
+        type={post[0].data.type}
+        title={post[0].data.title}
+        description={post[0].data.description}
+        link={post[0].slug}
+      />
     </div>
     <div>
       <div><h3>Latest Link</h3></div>
-      <IndexSummary header="Latest Link" type={link[0].data.type} title={link[0].data.links[0].title} description={link[0].data.links[0].summary} link={link[0].data.links[0].link} />
+      <IndexSummary
+        header="Latest Link"
+        type={link[0].data.type}
+        title={link[0].data.links[0].title}
+        description={link[0].data.links[0].summary}
+        link={link[0].data.links[0].link}
+      />
     </div>
     <div>
       <div><h3>Currently Reading</h3></div>
-      <IndexSummary header="Currently Reading" type={reading[0].data.type} title={reading[0].data.title} description={reading[0].data.description} link={reading[0].data.link} image={reading[0].data.cover}/>
+      <IndexSummary
+        header="Currently Reading"
+        type={reading[0].data.type}
+        title={reading[0].data.title}
+        description={reading[0].data.description}
+        link={reading[0].data.link}
+        image={reading[0].data.cover}
+      />
     </div>
   </div>
 </IndexLayout>

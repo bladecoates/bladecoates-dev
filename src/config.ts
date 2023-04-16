@@ -5,7 +5,7 @@ export const site = {
   description: "Your website description.",
   defaultLanguage: "en_US",
   giscus_github_repo: "bladecoates/bladecoates-dev",
-  giscus_github_repo_id: "R_kgDOJVt0Wg"
+  giscus_github_repo_id: "R_kgDOJVt0Wg",
 };
 
 export const giscus = {
@@ -22,7 +22,7 @@ export const giscus = {
   theme: "dark_tritanopia",
   lang: "en",
   loading: "lazy",
-}
+};
 
 // This is the type of the Frontmatter you put in the docs markdown files.
 export type Frontmatter = {

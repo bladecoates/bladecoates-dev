@@ -1,11 +1,12 @@
 ---
-import { SITE } from '../config';
+import { SITE } from "../config";
 import PostContent from "../components/PageContent/PostContent.astro";
 import Infobox from "../components/Infobox/Infobox.svelte";
 import BaseLayout from "./BaseLayout.astro";
-import Giscus from '@giscus/svelte';
+import Giscus from "@giscus/svelte";
 
-const { content, title, headings, post } = Astro.props.frontmatter || Astro.props;
+const { content, title, headings, post } =
+  Astro.props.frontmatter || Astro.props;
 // TODO: Remove use of `content.astro.headings`
 ---
 
@@ -15,7 +16,12 @@ const { content, title, headings, post } = Astro.props.frontmatter || Astro.prop
       headings && (
         <Fragment slot="before-article">
           <nav>
-            <Infobox client:media="(max-width: 72em)" isMobile={true} date={post.data.pubDate} tags={post.data.tags} />
+            <Infobox
+              client:media="(max-width: 72em)"
+              isMobile={true}
+              date={post.data.pubDate}
+              tags={post.data.tags}
+            />
           </nav>
         </Fragment>
       )

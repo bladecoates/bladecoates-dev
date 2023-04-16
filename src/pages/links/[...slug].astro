@@ -3,30 +3,34 @@ import { CollectionEntry, getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import LinkSummary from "../../components/Cards/LinkSummary.svelte";
 export async function getStaticPaths() {
-	const posts = await getCollection("links");
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("links");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
 type Props = CollectionEntry<"links">;
 
 const post = Astro.props;
 ---
+
 <MainLayout title={post.data.title} type={post.data.type}>
-	 <div>
-		<h3><time class="" datetime={post.data.dates.published.toISOString()}
-						>{post.data.dates.published.toLocaleDateString('en-us', {
-							year: 'numeric',
-							month: 'short',
-							day: 'numeric',
-						})}</time
-					>
-		</h3>
-		 {
-			 post.data.links.map(({ link, title, summary }) =>
-				 <LinkSummary link={link} title={title} summary={summary} />
-			 )
-		 }
-	 </div>
+  <div>
+    <h3>
+      <time class="" datetime={post.data.dates.published.toISOString()}
+        >{
+          post.data.dates.published.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }</time
+      >
+    </h3>
+    {
+      post.data.links.map(({ link, title, summary }) => (
+        <LinkSummary link={link} title={title} summary={summary} />
+      ))
+    }
+  </div>
 </MainLayout>
