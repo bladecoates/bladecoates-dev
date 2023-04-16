@@ -2,16 +2,16 @@
 /* https://github.com/tailwindlabs/tailwindcss/discussions/2917 */
 
 @layer base {
-	body {
-		&.dark {
-			@apply text-gray-200;
+  body {
+    &.dark {
+      @apply text-gray-200;
 
-			header,
-			footer {
-				@apply border-gray-700 text-gray-400;
-			}
-		}
-	}
+      header,
+      footer {
+        @apply border-gray-700 text-gray-400;
+      }
+    }
+  }
 }
 
 @tailwind components;

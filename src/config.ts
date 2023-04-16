@@ -6,7 +6,6 @@ export const SITE = {
   defaultLanguage: "en_US",
 };
 
-
 // This is the type of the Frontmatter you put in the docs markdown files.
 export type Frontmatter = {
   title: string;
