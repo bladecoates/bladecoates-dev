@@ -1,12 +1,12 @@
 ---
-import { SITE } from "../../config";
-const site = SITE;
+import { site } from "../../config";
+const { url} = site;
 ---
 
 <header class="fixed z-10 flex h-12 w-screen overflow-hidden bg-[#2a233e] p-2 items-center">
   <nav class="flex w-full gap-2 items-center" aria-label="">
     <div dir="ltr" lang="en" class="flex shrink-0 grow gap-1 p-1 font-semibold">
-          <a class="" href={site.url}>
+          <a class="" href={url}>
             <span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 554 90" class="iconLeft h-8">
 								<g
@@ -28,7 +28,3 @@ const site = SITE;
     </div>
   </nav>
 </header>
-
-<style>
-
-</style>

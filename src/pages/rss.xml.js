@@ -31,5 +31,6 @@ export async function get(context) {
       content: sanitizeHtml(parser.render(post.body)),
       link: `/${post.data.type}/${post.slug}`,
     })),
+    trailingSlash: false,
   });
 }

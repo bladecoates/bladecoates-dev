@@ -48,7 +48,7 @@ const links = defineCollection({
   }),
 });
 
-const reading = defineCollection({
+const books = defineCollection({
   // Type-check frontmatter using a schema
   schema: z.object({
     type: z.string(),
@@ -73,4 +73,4 @@ const reading = defineCollection({
   }),
 });
 
-export const collections = { blog, links, reading };
+export const collections = { blog, links, books };

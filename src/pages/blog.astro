@@ -7,7 +7,9 @@ const posts = (
   await getCollection("blog", ({ data }) => {
     return data.draft === false;
   })
-).sort((a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf());
+).sort(
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+);
 const title = "Latest Posts";
 ---
 
@@ -21,7 +23,7 @@ const title = "Latest Posts";
             <li>
               <PostSummary
                 title={post.data.title}
-                slug={`/blog/${post.slug}/`}
+                slug={`/blog/${post.slug}`}
                 date={post.data.dates.published}
                 description={post.data.description}
                 tags={post.data.tags}
