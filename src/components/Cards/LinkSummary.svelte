@@ -20,40 +20,6 @@
 			</ul>
 		</div>
 </Card>
-<!--<Card isBorder={false} isStacked={true} css="bg-theme-paper py-1 px-3">
-	<div class="w-full content-start font-semibold">
-		<a href={slug}>{title}</a>
-	</div>
-	<div class="w-full content-start">{description}</div>
-	<div class="w-full">
-		<Card css="">
-			<div class="flex w-full grid-cols-4 content-center items-stretch gap-2">
-				<div class="shrink grow-0">
-					Author: <a href="/about#self">Blade Coates</a>
-				</div>
-				<div class="flex shrink-0 grow justify-end">
-					Date:&nbsp;<time class="" datetime={date.toISOString()}
-						>{date.toLocaleDateString("en-us", {
-							year: "numeric",
-							month: "short",
-							day: "numeric",
-						})}</time
-					>
-				</div>
-			</div>
-		</Card>
-		<Card css="">
-			<div class="grid w-full grid-cols-2 content-center items-stretch gap-2">
-				<div class="shrink grow-0">Tags</div>
-				<div class="flex shrink-0 grow justify-end gap-2" style="">
-					<a href="/" class="tag"><Tag>tag-x</Tag></a><a href="/" class="tag"
-						><Tag>tag-y</Tag></a
-					>
-				</div>
-			</div>
-		</Card>
-	</div>
-</Card>-->
 
 <style>
 	div > a.tag {
@@ -64,8 +30,4 @@
 		color: var(--theme-accent);
 		border: 1px solid var(--theme-accent);
 	}
-
-	/* .infobox-mobile-container {
-    --header-bottom-padding: 1.5rem;
-  } */
 </style>

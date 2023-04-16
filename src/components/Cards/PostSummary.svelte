@@ -54,8 +54,4 @@
 		color: var(--theme-accent);
 		border: 1px solid var(--theme-accent);
 	}
-
-	/* .infobox-mobile-container {
-    --header-bottom-padding: 1.5rem;
-  } */
 </style>

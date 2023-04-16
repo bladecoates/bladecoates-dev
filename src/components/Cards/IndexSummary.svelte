@@ -14,7 +14,6 @@
 </script>
 
 <Card isBorder={false} isStacked={false} css="bg-theme-paper py-1 px-3">
-	<!--<div class="w-full content-start font-semibold">{header}</div>-->
 {#if image}
 	<div class="grid grid-cols-2">
 	  <div>
@@ -49,8 +48,4 @@
 		color: var(--theme-accent);
 		border: 1px solid var(--theme-accent);
 	}
-
-	/* .infobox-mobile-container {
-    --header-bottom-padding: 1.5rem;
-  } */
 </style>
