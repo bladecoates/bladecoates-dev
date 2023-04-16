@@ -1,0 +1,39 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import IndexSummary from "../../components/Cards/IndexSummary.svelte";
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+  return books.map((book) => ({
+    params: { slug: book.slug },
+    props: book,
+  }));
+}
+type Props = CollectionEntry<"books">;
+
+const book = Astro.props;
+---
+
+<MainLayout title="Currently Reading" type={book.data.type}>
+  <div>
+    <h3>
+      <time class="" datetime={book.data.dates.published.toISOString()}
+        >{
+          book.data.dates.published.toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }</time
+      >
+    </h3>
+    <IndexSummary
+      header="Currently Reading"
+      type={book.data.type}
+      title={book.data.title}
+      description={book.data.description}
+      link={book.data.link}
+      image={book.data.cover}
+    />
+  </div>
+</MainLayout>

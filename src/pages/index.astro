@@ -19,8 +19,8 @@ const link = (
 ).sort(
   (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
 );
-const reading = (
-  await getCollection("reading", ({ data }) => {
+const books = (
+  await getCollection("books", ({ data }) => {
     return data.draft === false;
   })
 ).sort(
@@ -55,11 +55,11 @@ const reading = (
       <div><h3>Currently Reading</h3></div>
       <IndexSummary
         header="Currently Reading"
-        type={reading[0].data.type}
-        title={reading[0].data.title}
-        description={reading[0].data.description}
-        link={reading[0].data.link}
-        image={reading[0].data.cover}
+        type={books[0].data.type}
+        title={books[0].data.title}
+        description={books[0].data.description}
+        link={books[0].data.link}
+        image={books[0].data.cover}
       />
     </div>
   </div>

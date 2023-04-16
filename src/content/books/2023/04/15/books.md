@@ -1,5 +1,5 @@
 ---
-type: "reading"
+type: "books"
 title: "The Way of Kings"
 description: "Book One of the Stormlight Archive"
 link: "https://www.brandonsanderson.com/the-stormlight-archive-series/#THEWAYOFKINGS"
