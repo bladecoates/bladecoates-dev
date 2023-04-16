@@ -85,7 +85,10 @@
             class="grid w-full grid-cols-2 content-center items-stretch gap-2"
           >
             <div class="">Tags</div>
-            <div class="flex-grow-1 flex-shrink-1 flex justify-end gap-2">
+            <div
+              class="flex-grow-1 flex-shrink-1 flex justify-end gap-2"
+
+            >
               {#each tags as tag, index}
                 <a href="/" class="tag"><Tag>{tag}</Tag></a>
               {/each}
@@ -130,7 +133,10 @@
             >
           </div>
           <div class="">Tags</div>
-          <div class="flex-grow-1 flex-shrink-1 flex justify-end gap-2">
+          <div
+            class="flex-grow-1 flex-shrink-1 flex justify-end gap-2"
+
+          >
             {#each tags as tag, index}
               <a href="/" class="tag"><Tag>{tag}</Tag></a>
             {/each}
@@ -166,7 +172,7 @@
     --header-bottom-padding: 1.5rem;
   } */
 
-  @media (width >= 50em) {
+  @media (min-width: 50em) {
     /* Improve toggle & title alignment with left sidebar */
     .infobox-mobile-container {
       --header-bottom-padding: 0.5rem;
