@@ -4,6 +4,8 @@ export const SITE = {
   title: "Blade Coates",
   description: "Your website description.",
   defaultLanguage: "en_US",
+  giscus_github_repo: "bladecoates/bladecoates-dev",
+  giscus_github_repo_id: "R_kgDOJVt0Wg"
 };
 
 // This is the type of the Frontmatter you put in the docs markdown files.

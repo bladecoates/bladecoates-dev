@@ -1,9 +1,13 @@
 ---
+import { SITE } from '../config';
 import PostContent from "../components/PageContent/PostContent.astro";
 import Infobox from "../components/Infobox/Infobox.svelte";
 import BaseLayout from "./BaseLayout.astro";
+import Giscus from '@giscus/svelte';
 
 const { content = {} } = Astro.props;
+const github_repo = SITE.giscus_github_repo;
+const github_repo_id = SITE.giscus_github_repo_id;
 // TODO: Remove use of `content.astro.headings`
 const headings = Astro.props.headings ?? content.astro?.headings;
 const post = Astro.props.post;
@@ -22,5 +26,20 @@ const post = Astro.props.post;
     }
     <Fragment slot="after-title"><slot name="header" /></Fragment>
     <slot />
+<Giscus
+  id="comments"
+  repo={github_repo}
+  repoId={github_repo_id}
+  category="General"
+  categoryId="DIC_kwDOJVt0Ws4CV0HV"
+  mapping="pathname"
+  term="Welcome to @giscus/react component!"
+  reactionsEnabled="1"
+  emitMetadata="0"
+  inputPosition="top"
+  theme="dark_tritanopia"
+  lang="en"
+  loading="lazy"
+/>
   </PostContent>
 </BaseLayout>
