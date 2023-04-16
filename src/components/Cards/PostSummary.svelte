@@ -35,7 +35,7 @@
     <Card css="">
       <div class="grid w-full grid-cols-2 content-center items-stretch gap-2">
         <div class="shrink grow-0">Tags</div>
-        <div class="flex shrink-0 grow justify-end gap-2" style="">
+        <div class="flex shrink-0 grow justify-end gap-2">
           {#each tags as tag, index}
             <a href="/" class="tag"><Tag>{tag}</Tag></a>
           {/each}
@@ -50,6 +50,7 @@
     text-decoration: none;
     border: 1px solid var(--theme-border-color);
   }
+
   div > a.tag:hover {
     color: var(--theme-accent);
     border: 1px solid var(--theme-accent);

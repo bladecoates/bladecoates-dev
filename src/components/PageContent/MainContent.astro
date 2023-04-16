@@ -53,7 +53,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
       font-size: var(--theme-text-xs);
     }
 
-    @media (min-width: 50em) {
+    @media (width >= 50em) {
       .fixed-mobile-bar {
         /* inset-inline-start: var(--theme-left-sidebar-width); */
         margin-top: 0;
@@ -64,7 +64,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
       }
     }
 
-    @media (min-width: 72em) {
+    @media (width >= 72em) {
       .fixed-mobile-bar {
         display: none;
       }

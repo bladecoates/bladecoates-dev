@@ -43,7 +43,7 @@
             class="grid w-full grid-cols-2 content-center items-stretch gap-2"
           >
             <div class="">Author</div>
-            <div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
+            <div class="flex-grow-1 flex-shrink-1 flex justify-end">
               <a href="/about#self">Blade Coates</a>
             </div>
           </div>
@@ -53,7 +53,7 @@
             class="grid w-full grid-cols-2 content-center items-stretch gap-2"
           >
             <div class="">Published</div>
-            <div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
+            <div class="flex-grow-1 flex-shrink-1 flex justify-end">
               <time class="" datetime={date.toISOString()}
                 >{date.toLocaleDateString("en-us", {
                   year: "numeric",
@@ -69,7 +69,7 @@
             class="grid w-full grid-cols-2 content-center items-stretch gap-2"
           >
             <div class="">Updated</div>
-            <div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
+            <div class="flex-grow-1 flex-shrink-1 flex justify-end">
               <time class="" datetime={date.toISOString()}
                 >{date.toLocaleDateString("en-us", {
                   year: "numeric",
@@ -85,10 +85,7 @@
             class="grid w-full grid-cols-2 content-center items-stretch gap-2"
           >
             <div class="">Tags</div>
-            <div
-              class="flex-grow-1 flex-shrink-1 flex justify-end gap-2"
-              style=""
-            >
+            <div class="flex-grow-1 flex-shrink-1 flex justify-end gap-2">
               {#each tags as tag, index}
                 <a href="/" class="tag"><Tag>{tag}</Tag></a>
               {/each}
@@ -105,11 +102,11 @@
       <Card css="">
         <div class="grid w-full grid-cols-4 content-center items-stretch gap-2">
           <div class="">Author</div>
-          <div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
+          <div class="flex-grow-1 flex-shrink-1 flex justify-end">
             <a href="/about#self">Blade Coates</a>
           </div>
           <div class="">Published</div>
-          <div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
+          <div class="flex-grow-1 flex-shrink-1 flex justify-end">
             <time class="" datetime={date.toISOString()}
               >{date.toLocaleDateString("en-us", {
                 year: "numeric",
@@ -123,7 +120,7 @@
       <Card css="">
         <div class="grid w-full grid-cols-4 content-center items-stretch gap-2">
           <div class="">Updated</div>
-          <div class="flex-grow-1 flex-shrink-1 flex justify-end" style="">
+          <div class="flex-grow-1 flex-shrink-1 flex justify-end">
             <time class="" datetime={date.toISOString()}
               >{date.toLocaleDateString("en-us", {
                 year: "numeric",
@@ -133,10 +130,7 @@
             >
           </div>
           <div class="">Tags</div>
-          <div
-            class="flex-grow-1 flex-shrink-1 flex justify-end gap-2"
-            style=""
-          >
+          <div class="flex-grow-1 flex-shrink-1 flex justify-end gap-2">
             {#each tags as tag, index}
               <a href="/" class="tag"><Tag>{tag}</Tag></a>
             {/each}
@@ -152,10 +146,12 @@
     text-decoration: none;
     border: 1px solid var(--theme-border-color);
   }
+
   div > a.tag:hover {
     color: var(--theme-accent);
     border: 1px solid var(--theme-accent);
   }
+
   /* The mobile container is a <details> element wrapping the mobile TOC */
   .infobox-mobile-container > .infobox-mobile-header::marker,
   .infobox-mobile-container > .infobox-mobile-header::-webkit-details-marker {
@@ -170,7 +166,7 @@
     --header-bottom-padding: 1.5rem;
   } */
 
-  @media (min-width: 50em) {
+  @media (width >= 50em) {
     /* Improve toggle & title alignment with left sidebar */
     .infobox-mobile-container {
       --header-bottom-padding: 0.5rem;

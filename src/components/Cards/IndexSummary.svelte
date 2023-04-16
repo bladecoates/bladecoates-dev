@@ -45,6 +45,7 @@
     text-decoration: none;
     border: 1px solid var(--theme-border-color);
   }
+
   div > a.tag:hover {
     color: var(--theme-accent);
     border: 1px solid var(--theme-accent);
