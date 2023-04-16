@@ -7,7 +7,7 @@
 	export let slug;
 	export let description;
 	export let date;
-	// export let tags;
+	export let tags;
 </script>
 
 <Card isBorder={false} isStacked={true} css="bg-theme-paper py-1 px-3">
@@ -36,9 +36,9 @@
 			<div class="grid w-full grid-cols-2 content-center items-stretch gap-2">
 				<div class="shrink grow-0">Tags</div>
 				<div class="flex shrink-0 grow justify-end gap-2" style="">
-					<a href="/" class="tag"><Tag>tag-x</Tag></a><a href="/" class="tag"
-						><Tag>tag-y</Tag></a
-					>
+					{#each tags as tag, index}
+		                <a href="/" class="tag"><Tag>{tag}</Tag></a>
+					{/each}
 				</div>
 			</div>
 		</Card>

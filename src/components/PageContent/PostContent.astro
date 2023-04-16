@@ -34,7 +34,7 @@ const post = Astro.props.post;
 				<h1 class="font-black" id="overview" set:html={post.data.title} />
 				<div class="metadata-desktop">
 					<nav class="">
-						<Infobox client:media="(min-width: 50em)" isMobile={false} date={post.data.pubDate} />
+						<Infobox client:media="(min-width: 50em)" isMobile={false} date={post.data.dates.published} tags={post.data.tags} />
 					</nav>
 				</div>
 				<slot name="after-title" />

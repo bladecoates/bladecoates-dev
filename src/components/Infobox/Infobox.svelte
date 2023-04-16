@@ -4,6 +4,7 @@
 
 	export let isMobile;
 	export let date;
+	export let tags;
 </script>
 
 {#if isMobile}
@@ -88,10 +89,9 @@
 							class="flex-grow-1 flex-shrink-1 flex justify-end gap-2"
 							style=""
 						>
-							<a href="/" class="tag"><Tag>tag-x</Tag></a><a
-								href="/"
-								class="tag"><Tag>tag-y</Tag></a
-							>
+							{#each tags as tag, index}
+								<a href="/" class="tag"><Tag>{tag}</Tag></a>
+							{/each}
 						</div>
 					</div>
 				</Card>
@@ -137,9 +137,9 @@
 						class="flex-grow-1 flex-shrink-1 flex justify-end gap-2"
 						style=""
 					>
-						<a href="/" class="tag"><Tag>tag-x</Tag></a><a href="/" class="tag"
-							><Tag>tag-y</Tag></a
-						>
+						{#each tags as tag, index}
+							<a href="/" class="tag"><Tag>{tag}</Tag></a>
+						{/each}
 					</div>
 				</div>
 			</Card>

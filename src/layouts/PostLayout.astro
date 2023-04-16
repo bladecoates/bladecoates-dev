@@ -15,7 +15,7 @@ const post = Astro.props.post;
       headings && (
         <Fragment slot="before-article">
           <nav>
-            <Infobox client:media="(max-width: 72em)" isMobile={true} date={post.data.pubDate}/>
+            <Infobox client:media="(max-width: 72em)" isMobile={true} date={post.data.pubDate} tags={post.data.tags} />
           </nav>
         </Fragment>
       )
