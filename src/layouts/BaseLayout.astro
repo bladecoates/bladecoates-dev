@@ -2,9 +2,9 @@
 import Footer from "../components/Footer/Footer.astro";
 import HeadCommon from "../components/HeadCommon.astro";
 import Header from "../components/Header/Header.astro";
-import { SITE } from "../config";
+import { site } from "../config";
 
-const title = SITE.title;
+const {title} = site;
 const url = Astro.url;
 const currentPage = url.pathname;
 ---

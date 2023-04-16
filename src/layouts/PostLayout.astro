@@ -5,12 +5,8 @@ import Infobox from "../components/Infobox/Infobox.svelte";
 import BaseLayout from "./BaseLayout.astro";
 import Giscus from '@giscus/svelte';
 
-const { content = {} } = Astro.props;
-const github_repo = SITE.giscus_github_repo;
-const github_repo_id = SITE.giscus_github_repo_id;
+const { content, title, headings, post } = Astro.props.frontmatter || Astro.props;
 // TODO: Remove use of `content.astro.headings`
-const headings = Astro.props.headings ?? content.astro?.headings;
-const post = Astro.props.post;
 ---
 
 <BaseLayout {...Astro.props}>
