@@ -11,7 +11,7 @@ export const SITE = {
 export const giscus = {
   repo: "bladecoates/bladecoates-dev",
   repoId: "R_kgDOJVt0Wg",
-  category: "category",
+  category: "General",
   categoryId: "DIC_kwDOJVt0Ws4CV0HV",
   mapping: "pathname",
   strict: "1",
