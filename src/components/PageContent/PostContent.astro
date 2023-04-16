@@ -1,7 +1,7 @@
 ---
 import { SITE } from '../../config';
 import Infobox from '../Infobox/Infobox.svelte';
-import Comments from "../Comments/Comments.svelte";
+import Giscus from '@giscus/svelte';
 
 export interface Props {
 	content: { title: string };
@@ -43,7 +43,7 @@ const post = Astro.props.post;
 			<slot />
 		</section>
 	</article>
-	<Comments
+	<Giscus
   id="comments"
   repo={github_repo}
   repoId={github_repo_id}
