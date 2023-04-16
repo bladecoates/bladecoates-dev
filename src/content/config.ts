@@ -4,19 +4,54 @@ const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
+		type: z.string(),
 		description: z.string(),
 		// Transform string to Date object
-		pubDate: z
+		dates: z.object({
+			created: z
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-		updatedDate: z
+			published: z
 			.string()
-			.optional()
-			.transform((str) => (str ? new Date(str) : undefined)),
+			.or(z.date())
+			.transform((val) => (val ? new Date(val) : undefined)),
+			updated: z
+			.string()
+			.or(z.date())
+			.optional(),
+		}),
+		tags: z.array(
+			z.string()
+		).optional(),
 		heroImage: z.string().optional(),
 		draft: z.boolean().optional(),
 	}),
 });
 
-export const collections = { blog };
+const links = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: z.object({
+		title: z.string(),
+		type: z.string(),
+		links: z.array(z.object({link: z.string(), title: z.string(), summary: z.string()})),
+		// Transform string to Date object
+		dates: z.object({
+			created: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
+			published: z
+			.string()
+			.or(z.date())
+			.transform((val) => (val ? new Date(val) : undefined)),
+			updated: z
+			.string()
+			.or(z.date())
+			.optional(),
+		}),
+		draft: z.boolean().optional(),
+	}),
+});
+
+export const collections = { blog, links };
