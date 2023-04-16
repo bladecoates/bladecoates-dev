@@ -32,5 +32,4 @@ pnpm-debug.log*
 utilites/
 
 # Test Posts
-test-post*.md
-test-link*.md
+test-*-*.md
