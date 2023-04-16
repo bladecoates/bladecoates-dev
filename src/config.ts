@@ -1,4 +1,4 @@
-export const SITE = {
+export const site = {
   url: "https://bladecoates.dev",
   slug: "",
   title: "Blade Coates",
