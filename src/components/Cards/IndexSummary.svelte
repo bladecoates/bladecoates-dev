@@ -18,7 +18,7 @@
 {#if image}
 	<div class="grid grid-cols-2">
 	  <div>
-	  	  <img src={image} width="32" />
+	  	  <img src={image} width="48" />
 	  </div>
 		<div>
 	  <div class="w-full content-start font-semibold">
