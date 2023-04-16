@@ -1,7 +1,6 @@
 ---
 type: "links"
 title: "Around the web!"
-slug: "2023-04-15"
 description: "Links for today!"
 dates:
   created: 2023-04-15T13:00:00-5:00

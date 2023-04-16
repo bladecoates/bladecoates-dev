@@ -4,7 +4,6 @@ title: "The Way of Kings"
 description: "Book One of the Stormlight Archive"
 link: "https://www.brandonsanderson.com/the-stormlight-archive-series/#THEWAYOFKINGS"
 ISBN: "9781429992800"
-slug: "2023-04-16"
 dates:
   created: 2023-04-15T13:00:00-5:00
   published: 2023-04-15T13:00:00-5:00

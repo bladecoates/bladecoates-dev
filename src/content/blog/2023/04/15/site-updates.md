@@ -1,7 +1,6 @@
 ---
 type: "blog"
 title: "Site updates, Links and RSS Feed"
-slug: "site-updates-links-and-rss-feed"
 heroImage: ""
 description: "A New Site, New Layout on a New framework learning Astro 2.0"
 dates:

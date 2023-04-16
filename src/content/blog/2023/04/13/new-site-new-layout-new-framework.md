@@ -1,7 +1,6 @@
 ---
 type: "blog"
 title: "New Site, New Layout, New Framework"
-slug: "new-site-new-layout-new-framework"
 heroImage: ""
 description: "A New Site, New Layout on a New framework learning Astro 2.0"
 dates:
