@@ -48,4 +48,29 @@ const links = defineCollection({
   }),
 });
 
-export const collections = { blog, links };
+const reading = defineCollection({
+  // Type-check frontmatter using a schema
+  schema: z.object({
+    type: z.string(),
+    title: z.string(),
+    description: z.string(),
+    link: z.string(),
+    ISBN: z.string(),
+    // Transform string to Date object
+    dates: z.object({
+      created: z
+        .string()
+        .or(z.date())
+        .transform((val) => new Date(val)),
+      published: z
+        .string()
+        .or(z.date())
+        .transform((val) => (val ? new Date(val) : undefined)),
+      updated: z.string().or(z.date()).optional(),
+    }),
+    cover: z.string(),
+    draft: z.boolean().optional(),
+  }),
+});
+
+export const collections = { blog, links, reading };
