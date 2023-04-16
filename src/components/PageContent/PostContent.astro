@@ -24,12 +24,9 @@ const {
 	lang,
 	loading
 } = giscus;
-const github_repo = SITE.giscus_github_repo;
-const github_repo_id = SITE.giscus_github_repo_id;
-const { content } = Astro.props;
+
 // We wrap `@astrojs/` in a span to style it separately on integration pages.
-const title = content.title;
-const post = Astro.props.post;
+const { title, content, post } = Astro.props.frontmatter || Astro.props;
 ---
 
 <div dir="ltr" lang="en">
