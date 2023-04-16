@@ -9,7 +9,7 @@ import node from "@astrojs/node";
 export default defineConfig(
   /** @type {import('astro').AstroUserConfig} */ {
     site: "https://bladecoates.dev",
-        trailingSlash: 'never',
+    trailingSlash: "never",
     integrations: [
       mdx(),
       svelte(),
