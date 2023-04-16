@@ -43,7 +43,7 @@ const post = Astro.props.post;
 			<slot />
 		</section>
 	</article>
-	<Giscus
+	<Giscus client:only="svelte"
   id="comments"
   repo={github_repo}
   repoId={github_repo_id}
