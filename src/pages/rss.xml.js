@@ -8,20 +8,23 @@ export async function get(context) {
   const blog = await getCollection('blog', ({ data }) => {
   return data.draft === false;
 });
+  const links = await getCollection('links', ({ data }) => {
+  return data.draft === false;
+});
+  const rsscontent = blog.concat(links).sort(
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+);;
   return rss({
     //customData: '<atom:link href="https://bladecoates.dev/rss.xml" rel="self" type="application/rss+xml" />',
     stylesheet: '/rss/pretty-feed-v3.xsl',
     title: 'Blade Coates Blog',
     description: 'Constantly evolving my problem-solving, development, and leadership skills.',
     site: context.site,
-    items: blog.map((post) => ({
+    items: rsscontent.map((post) => ({
       title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.summary,
-      // Compute RSS link from post `slug`
-      // This example assumes all posts are rendered as `/blog/[slug]` routes
+      pubDate: post.data.dates.published,
+      description: post.data.description,
       content: sanitizeHtml(parser.render(post.body)),
-      link: `/blog/${post.slug}`,
+      link: `/${post.data.type}/${post.slug}`
     })),
-  });
-}
+})}
