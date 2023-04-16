@@ -19,11 +19,10 @@ This site is designed and built with open-source tools, technology, and framewor
 ### Privacy
 
 This site attempts to use minimal javascript, local resources, and no limited third-party tracking. The "Currently Reading" section links to the following in this order:
-<ul class="list-disc">
-<li>Authors website</li>
-<li>Publishers website</li>
-<li>Library of Congress</li>
-<li>Barnes and Noble (or equivalent small book site)</li>
-</ul>
+
+* Authors website
+* Publishers website
+* Library of Congress
+* Barnes and Noble (or equivalent small book site)
 
 The commenting system is currently provided by the [Giscus](https://giscus.app/) App, with the backend utilizing Github Discussions. A self host version is available, which I am experimenting with.
