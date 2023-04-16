@@ -1,5 +1,7 @@
 ---
+import { SITE } from '../../config';
 import Infobox from '../Infobox/Infobox.svelte';
+import Comments from "../Comments/Comments.svelte";
 
 export interface Props {
 	content: { title: string };
@@ -7,6 +9,8 @@ export interface Props {
 	next?: { text: string; link: string };
 }
 
+const github_repo = SITE.giscus_github_repo;
+const github_repo_id = SITE.giscus_github_repo_id;
 const { content } = Astro.props;
 // We wrap `@astrojs/` in a span to style it separately on integration pages.
 const title = content.title;
@@ -15,9 +19,6 @@ const post = Astro.props.post;
 
 <div dir="ltr" lang="en">
 	{
-		// For best cross-browser support of sticky or fixed elements, they must not be nested
-		// inside elements that hide any overflow axis. The article hides `overflow-x`,
-		// so we must place fixed UI elements like the mobile TOC here.
 		Astro.slots.has('before-article') && (
 			<>
 				<div class="fixed-mobile-bar" dir="ltr">
@@ -41,17 +42,22 @@ const post = Astro.props.post;
 			</header>
 			<slot />
 		</section>
-		<!-- {
-      content.type != "page" && (previous || next || comment) && (
-        <aside class="next-previous-nav">
-          {previous && <ArticleNavigationButton rel="prev" item={previous} />}
-          {comment && <ArticleCommentButton rel="comment" item={false} />}
-          {<ArticleShareButton rel="share" item={false} />}
-          {next && <ArticleNavigationButton rel="next" item={next} />}
-        </aside>
-      )
-    } -->
 	</article>
+	<Comments
+  id="comments"
+  repo={github_repo}
+  repoId={github_repo_id}
+  category="General"
+  categoryId="DIC_kwDOJVt0Ws4CV0HV"
+  mapping="pathname"
+  term="Welcome to @giscus/react component!"
+  reactionsEnabled="1"
+  emitMetadata="0"
+  inputPosition="top"
+  theme="dark_tritanopia"
+  lang="en"
+  loading="lazy"
+/>
 </div>
 
 <style>
