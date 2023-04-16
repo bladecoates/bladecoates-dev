@@ -4,8 +4,6 @@ export const site = {
   title: "Blade Coates",
   description: "Your website description.",
   defaultLanguage: "en_US",
-  giscus_github_repo: "bladecoates/bladecoates-dev",
-  giscus_github_repo_id: "R_kgDOJVt0Wg",
 };
 
 export const giscus = {
