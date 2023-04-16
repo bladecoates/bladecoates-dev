@@ -30,3 +30,7 @@ pnpm-debug.log*
 # obsidian
 .obsidian
 utilites/
+
+# Test Posts
+test-post*.md
+test-link*.md
