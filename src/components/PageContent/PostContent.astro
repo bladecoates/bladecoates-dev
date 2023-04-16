@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../../config';
+import { giscus } from '../../config';
 import Infobox from '../Infobox/Infobox.svelte';
 import Giscus from '@giscus/svelte';
 
@@ -8,7 +9,21 @@ export interface Props {
 	previous?: { text: string; link: string };
 	next?: { text: string; link: string };
 }
-
+const {
+	repo,
+	repoId,
+	category,
+	categoryId,
+	mapping,
+	strict,
+	term,
+	reactionsEnabled,
+	emitMetadata,
+	inputPosition,
+	theme,
+	lang,
+	loading
+} = giscus;
 const github_repo = SITE.giscus_github_repo;
 const github_repo_id = SITE.giscus_github_repo_id;
 const { content } = Astro.props;
@@ -28,7 +43,7 @@ const post = Astro.props.post;
 			</>
 		)
 	}
-	<article id="article" class="content">
+	<article id="article" class="content flex flex-column m-auto max-w-[85ch]">
 		<section class="main-section">
 			<header>
 				<slot name="before-title" />
@@ -43,21 +58,23 @@ const post = Astro.props.post;
 			<slot />
 		</section>
 	</article>
+	<div class="flex flex-column m-auto max-w-[85ch]">
 	<Giscus client:only="svelte"
   id="comments"
-  repo={github_repo}
-  repoId={github_repo_id}
-  category="General"
+  repo={repo}
+  repoId={repoId}
+  category={category}
   categoryId="DIC_kwDOJVt0Ws4CV0HV"
-  mapping="pathname"
-  term="Welcome to @giscus/react component!"
-  reactionsEnabled="1"
-  emitMetadata="0"
-  inputPosition="top"
-  theme="dark_tritanopia"
-  lang="en"
-  loading="lazy"
+  mapping={mapping}
+  term={term}
+  reactionsEnabled={reactionsEnabled}
+  emitMetadata={emitMetadata}
+  inputPosition={inputPosition}
+  theme={theme}
+  lang={lang}
+  loading={loading}
 />
+		</div>
 </div>
 
 <style>
@@ -115,10 +132,7 @@ const post = Astro.props.post;
 		padding-inline: var(--min-spacing-inline);
 		width: 100%;
 		height: 100%;
-		max-width: 80ch;
-		margin-inline: auto;
 		display: flex;
-		flex-direction: column;
 		overflow-x: hidden;
 	}
 
