@@ -1,16 +1,14 @@
 ---
+type: "blog"
 title: "New Site, New Layout, New Framework"
-description: "A New Site, New Layout on a New framework learning Astro 2.0"
 slug: "new-site-new-layout-new-framework"
-pubDate: "April 13 2023"
 heroImage: ""
-#dates:
-#  created: 2023-01-01T00:00:00-5:00
-#  published: 2023-01-01T00:00:00-5:00
-# tags:
-#  - intro1
-# slug: intro1
-# draft: true
+description: "A New Site, New Layout on a New framework learning Astro 2.0"
+dates:
+  created: 2023-04-13T00:00:00-5:00
+  published: 2023-04-13T00:00:00-5:00
+tags:
+ - introduction
 draft: false
 ---
 
