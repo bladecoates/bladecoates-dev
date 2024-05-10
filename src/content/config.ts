@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
@@ -30,7 +34,7 @@ const links = defineCollection({
     title: z.string(),
     type: z.string(),
     links: z.array(
-      z.object({ link: z.string(), title: z.string(), summary: z.string() })
+      z.object({ link: z.string(), title: z.string(), summary: z.string() }),
     ),
     // Transform string to Date object
     dates: z.object({

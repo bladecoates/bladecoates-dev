@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 export const site = {
   url: "https://bladecoates.dev",
   slug: "",

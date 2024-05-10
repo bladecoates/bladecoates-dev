@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 

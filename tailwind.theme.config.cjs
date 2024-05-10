@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 const colors = require("tailwindcss/colors");
 
 module.exports = {

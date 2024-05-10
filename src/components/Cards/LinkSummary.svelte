@@ -1,3 +1,7 @@
+<!--
+  - Copyright (c) 2024.
+  -->
+
 <script>
   import "agnostic-svelte/css/common.min.css";
   import { Card, Tag } from "agnostic-svelte";

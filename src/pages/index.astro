@@ -10,21 +10,21 @@ const post = (
     return data.draft === false;
   })
 ).sort(
-  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf(),
 );
 const link = (
   await getCollection("links", ({ data }) => {
     return data.draft === false;
   })
 ).sort(
-  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf(),
 );
 const books = (
   await getCollection("books", ({ data }) => {
     return data.draft === false;
   })
 ).sort(
-  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+  (a, b) => b.data.dates.published.valueOf() - a.data.dates.published.valueOf(),
 );
 ---
 

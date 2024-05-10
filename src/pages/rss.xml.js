@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import sanitizeHtml from "sanitize-html";
@@ -15,7 +19,7 @@ export async function get(context) {
     .concat(links)
     .sort(
       (a, b) =>
-        b.data.dates.published.valueOf() - a.data.dates.published.valueOf()
+        b.data.dates.published.valueOf() - a.data.dates.published.valueOf(),
     );
   return rss({
     //customData: '<atom:link href="https://bladecoates.dev/rss.xml" rel="self" type="application/rss+xml" />',

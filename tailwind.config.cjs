@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 /* eslint-env node */
 const { fontFamily } = require("tailwindcss/defaultTheme");
 const config = require("./tailwind.theme.config.cjs");
