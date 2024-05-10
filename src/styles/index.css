@@ -143,7 +143,7 @@ h2 {
   margin-top: 2rem;
 }
 
-:is(h1, h2, h3, h4, h5, h6, .heading-wrapper)
+:is(h1, h2, h3, h4, h5, h6, .heading-wrapper),
   + :is(h1, h2, h3, h4, h5, h6, .heading-wrapper):not(:first-child) {
   margin-top: 0;
 }
@@ -271,10 +271,7 @@ article > section nav :is(ul, ol) > * + * {
   margin-top: inherit;
 }
 
-article
-  > section
-  li
-  > :is(p, pre, .code-snippet, blockquote):not(:first-child) {
+article > section li > :is(p, pre, .code-snippet, blockquote):not(:first-child) {
   margin-top: 1rem;
 }
 

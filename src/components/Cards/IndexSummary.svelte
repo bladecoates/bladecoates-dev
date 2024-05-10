@@ -21,7 +21,7 @@
   {#if image}
     <div class="grid grid-cols-2">
       <div>
-        <img src={image} width="48" />
+        <img src={image} width="48" alt="Book Cover" />
       </div>
       <div>
         <div class="w-full content-start font-semibold">
